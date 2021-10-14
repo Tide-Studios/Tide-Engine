@@ -1,9 +1,10 @@
 ConsoleLib = {}
-console = {log,shell}
+console = {log,execute}
  function console.log(consoletext)
  print(consoletext)
  end
- function console.shell(consoleshelltext)
+ function console.execute(consoleshelltext)
  os.execute(consoleshelltext)
  end
+
 return ConsoleLib

@@ -1,5 +1,6 @@
 PackageLib = {}
-package = {new=nil,import=nil}
+package = {new=nil,import=nil,title}
+
 
 function package.new(packageNewName,packageCode)
 packageNewfile = io.open("main/Packages/"..packageNewName..".lua","a")
@@ -14,5 +15,7 @@ packageImportFile = loadfile("main/Packages/"..packageImportName..".lua")
 packageImportFile()
 print("[PackageManager]"..packageImportName.." has Successfully Imported!")
 end
+
+
 
 return PackageLib

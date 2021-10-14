@@ -1,8 +1,8 @@
  DrawLib = {}
- draw = {text = nil,line = nil,image = nil,button=nil,dragText=nil,rectangle=nil,dragRectangle=nil,dragableImage=nil}
+draw = {text = nil,line = nil,image = nil,button=nil,dragText=nil,rectangle=nil,dragRectangle=nil,dragableImage=nil}
 
   
-function draw.text(text,TextX,TextY)s --- Draw Text function is defiend
+function draw.text(text,TextX,TextY)--- Draw Text function is defiend
 function love.draw() --- draws the text on screen
 love.graphics.print(text,TextX,TextY)
 end
@@ -115,4 +115,5 @@ function love.draw() -- Draws FPS on Screen
 end
 end
 --- Returns DrawAPI Package
+
 return DrawLib

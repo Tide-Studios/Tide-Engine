@@ -1,5 +1,4 @@
 Sprite1 = {}
-
 sprite = {x,y,new}
 function sprite.new(SpriteImage,StartingX,StartingY,DefaultKeys)
 if DefaultKeys == true then
@@ -30,4 +29,6 @@ end
 end
 end
 end
+
+
 return Sprite1
