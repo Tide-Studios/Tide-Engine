@@ -1,7 +1,9 @@
---- API Main (DO NOT TOUCH!) It will break the api!
-local main = loadfile("main/api/apimain.lua")
-local configs =  loadfile("main/config/config.lua")
- --- Runs the Main and Config
-main()
+  --- API Main (DO NOT TOUCH!) It will break the api!
+local core = loadfile("engine/api/core.lua")
+local configs =  loadfile("engine/config/config.lua")
+ --- Runs the Core
+core()
 configs()
 --- Write Code Here ---
+
+

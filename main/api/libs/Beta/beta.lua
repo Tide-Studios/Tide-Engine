@@ -1,3 +1,0 @@
-Beta = {}
-
-return Beta
