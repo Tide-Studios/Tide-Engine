@@ -1,3 +1,3 @@
-# Tide-Engine Source
+# Tide-Engine
 
-Hello! This is a Game Engine
+Service by Tide Studios

@@ -1,17 +1,14 @@
   DrawLib = {}
-draw = {text = nil,line = nil,image = nil,button=nil,dragText=nil,rectangle=nil,dragRectangle=nil,draggableImage=nil,textFonted=nil, video = nil}
+draw = {text = nil,line = nil,image = nil,button=nil,dragText=nil,rectangle=nil,dragRectangle=nil,draggableImage=nil,textFonted=nil, video = nil, draggableVideo = nil}
 
   
 function draw.text(text,TextX,TextY)--- Draw Text function is defiend
-function love.draw() --- draws the text on screen
 love.graphics.print(text,TextX,TextY)
-end
 end
 
 function draw.rectangle(mode,DrawRecX,DrawRecY,DrawRecWid,DrawRecHei)
-function love.draw()
+
  love.graphics.rectangle(mode,DrawRecX,DrawRecY,DrawRecWid,DrawRecHei)
- end
 end
 
 function draw.video(videofile,videoX,videoY)
@@ -20,20 +17,38 @@ function love.load()
     video:play()
 end
 
-function love.draw()
     love.graphics.draw(video, videoX, videoY)
 end
-end
 function draw.line(LineX1,LineY1, LineX2,LineY2,LineX3,LineY3,LineX4,LineY4) --- Draws the Line
-function love.draw()
   love.graphics.line(LineX1,LineY1,LineX2,LineY2)
 end
+
+function draw.draggableVideo(DraggableVideo,DraggableVideoX,DraggableVideoY,DraggableVideoMouse)
+
+draw.video(DraggableVideo,DraggableVideoX,DraggableVideoY)
+
+function love.update()
+if DraggableVideoMouse == "LMB" then
+ if love.mouse.isDown(2) then
+ VideoMouseX, VideoMouseY = love.mouse.getPosition()
+ draw.video(DraggableVideo, VideoMouseX, VideoMouseY)
+      end
+    end
+
+if DraggableVideoMouse == "RMB" then
+ if love.mouse.isDown(1) then
+ VideoMouseX, VideoMouseY = love.mouse.getPosition()
+ draw.video(DraggableVideo,VideoMouseX,VideoMouseY)
+ end
+end
+
+  end
 end
 
 
-function draw.draggableText(DragText,TextOrgX,TextOrgY,ButtonTextNum) 
+function draw.draggableText(DraggableText,TextOrginalX,TextOrginalY,ButtonTextNum) 
 
-draw.text(DragText,TextOrgX,TextOrgY) --- Draws the Text
+draw.text(DraggableText,TextOrginalX,TextOrginalY) --- Draws the Text
 
 function love.update()
 
@@ -41,7 +56,7 @@ if ButtonTextNum == "LMB" then
 if love.mouse.isDown(2) then --- Makes Sure the Button Is Down
 
 TextMouseX,TextMouseY = love.mouse.getPosition()
-draw.text(DragText,TextMouseX,TextMouseY) --- Makes the Text dragableText
+draw.text(DraggableText,TextMouseX,TextMouseY) --- Makes the Text dragableText
 
 end
 end
@@ -54,7 +69,7 @@ function love.update()
 if love.mouse.isDown(1) then --- Makes Sure the Button Is Down
 
 TextMouseX,TextMouseY = love.mouse.getPosition()
-draw.text(DragText,TextMouseX,TextMouseY) --- Makes the Text dragableText
+draw.text(DraggableText,TextMouseX,TextMouseY) --- Makes the Text dragableText
 
 end
 end
@@ -106,23 +121,17 @@ end
 end
 
 
-function draw.textFonted(TextFont,TextFontX,TextFontY,TextPixel,TextFontFile)
-newFont = love.graphics.newFont("engine/assets/fonts/"..TextFontFile, TextPixel)
-
-function love.draw() 
+function draw.textFonted(TextFont,TextFontFile,TextFontX,TextFontY,TextPixel)
+newFont = love.graphics.newFont("engine/assets/Fonts/"..TextFontFile, TextPixel)
 
 	love.graphics.setFont(newFont)
 
 	love.graphics.print(TextFont,TextFontX,TextY)
 end
-end
-
 
 
 function draw.button(ButtonX1,ButtonY1,ButtonX2,ButtonY2) --- 
-function love.draw()
     love.graphics.rectangle("fill",ButtonX1,ButtonY1,ButtonX2,ButtonY2)
-end
 end
 
 
@@ -132,19 +141,15 @@ function draw.image(image, imagex,imagey) --- makes the first function
 function love.load() -- loads the image
 loadimage = love.graphics.newImage(image)
 end
-function love.draw() --
+function love.draw()
 love.graphics.draw(loadimage, imagex, imagey)
- end
 end
-
-
+end
 
 --- FPS Module
-function fpscounter()
-function love.draw() -- Draws FPS on Screen
+function getFrames()
+ -- Draws FPS on Screen
    love.graphics.print("Current FPS: "..tostring(love.timer.getFPS( )), 10, 10)
 end
-end
 --- Returns DrawAPI Package
-
 return DrawLib
