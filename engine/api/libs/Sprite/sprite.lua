@@ -1,5 +1,5 @@
 Sprite1 = {}
-sprite = {x,y,new,speed,onKeyDown}
+sprite = {x,y,new,speed,onKeyDown,move}
 sprite.speed = 5
 function sprite.new(SpriteImage,StartingX,StartingY,DefaultKeys)
 if DefaultKeys == true then
@@ -35,5 +35,11 @@ end
 
 function sprite.speed(spritevalue)
 sprite.speed =  spritevalue
+end
+
+function sprite.move(spritename,x,y,key)
+function love.update()
+if
+end
 end
 return Sprite1

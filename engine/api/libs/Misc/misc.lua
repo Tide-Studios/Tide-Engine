@@ -29,7 +29,7 @@ file:write(codes)
 file:close()
 run = loadfile("main/temp/run.lua")
 run()
-wait(1)
+wait(0.5)
 os. remove("main/temp/run.lua")
 end
 

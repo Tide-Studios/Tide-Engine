@@ -1,6 +1,6 @@
 UiLoader = {}
 
-local ui
+ ui = {create}
 
 
 
