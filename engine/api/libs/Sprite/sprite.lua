@@ -1,45 +1,28 @@
 Sprite1 = {}
-sprite = {x,y,new,speed,onKeyDown,move}
+sprite = {x,y,new,speed,onKeyDown,move,SpriteImage}
 sprite.speed = 5
-function sprite.new(SpriteImage,StartingX,StartingY,DefaultKeys)
-if DefaultKeys == true then
+function sprite.new(SpriteImage,StartingX,StartingY)
 sprite.x = StartingX
 sprite.y = StartingY
-
 draw.image(SpriteImage,x,y)
-function love.update()
-print(sprite.speed)
-if love.keyboard.isDown('w') then
-sprite.y = sprite.y +  -sprite.speed
-draw.image(SpriteImage,sprite.x,sprite.y)
-end
-
-if love.keyboard.isDown('a') then
-sprite.x = sprite.x +  -sprite.speed
-draw.image(SpriteImage,sprite.x,sprite.y)
-end
-
-if love.keyboard.isDown('s') then
-sprite.y = sprite.y + sprite.speed
-draw.image(SpriteImage,sprite.x,sprite.y)
-end
-
-if love.keyboard.isDown('d') then
-sprite.x = sprite.x +  sprite.speed
-draw.image(SpriteImage,sprite.x,sprite.y)
-end
-
-end
-end
 end
 
 function sprite.speed(spritevalue)
 sprite.speed =  spritevalue
 end
 
-function sprite.move(spritename,x,y,key)
+function sprite.move(SpriteImage,SpriteX,SpriteY,key,SpriteMove)
+sprite.x = SpriteX
+sprite.y = SpriteY
+sprite.speed = 5
 function love.update()
-if
+if love.keyboard.isDown(key) then
+if SpriteMove 
+sprite.x = sprite.x +  sprite.speed
+draw.image(SpriteImage,sprite.x,sprite.y)
 end
+
+end
+
 end
 return Sprite1
