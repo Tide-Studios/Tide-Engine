@@ -6,7 +6,6 @@ function script.load(script)
 --- Loads Scripts
 local tdsfile = loadfile("engine/assets/Scripts/"..script)
 local status, errorMsg = pcall(tdsfile)
-os.execute("clear")
 print("⎯⎯⎯ Console ⎯⎯⎯")
 if status == true then
 tdsfile()

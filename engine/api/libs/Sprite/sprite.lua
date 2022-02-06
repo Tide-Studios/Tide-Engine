@@ -15,9 +15,10 @@ function sprite.move(SpriteImage,SpriteX,SpriteY,key,SpriteMove)
 sprite.x = SpriteX
 sprite.y = SpriteY
 sprite.speed = 5
+SpriteMove = string.lower(SpriteMove)
 function love.update()
 if love.keyboard.isDown(key) then
-if SpriteMove 
+if SpriteMove == "foward" then
 sprite.x = sprite.x +  sprite.speed
 draw.image(SpriteImage,sprite.x,sprite.y)
 end

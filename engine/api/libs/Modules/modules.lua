@@ -6,10 +6,11 @@ module = {add = nil, list = nil, antiInject = nil}
 function module.add(modulename,modulepath)
 local Module = loadfile(modulepath)
   local status, errorMsg = pcall(Module)
+  
   if status == true then
  print(modulename..":✅")
  Module()
-
+ os.execute("clear")
   end
   if status == false then
  Errors = Errors + 1

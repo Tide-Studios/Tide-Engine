@@ -5,3 +5,4 @@ local settings = loadfile("engine/settings/settings.lua")
 core()
 settings()
 --- Write Code Here ---
+script.load("tide.lua")

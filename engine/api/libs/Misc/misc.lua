@@ -27,10 +27,10 @@ file = io.open("main/temp/run.lua","w")
 file:write(codes)
 
 file:close()
-run = loadfile("main/temp/run.lua")
+run = loadfile("main/api/temp/run.lua")
 run()
 wait(0.5)
-os. remove("main/temp/run.lua")
+os. remove("main/api/temp/run.lua")
 end
 
 
