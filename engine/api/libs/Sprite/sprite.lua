@@ -1,4 +1,5 @@
 Sprite1 = {}
+error({code=121})
 sprite = {x,y,new,speed,onKeyDown,move,SpriteImage}
 sprite.speed = 5
 function sprite.new(SpriteImage,StartingX,StartingY)
@@ -26,4 +27,5 @@ end
 end
 
 end
+
 return Sprite1
