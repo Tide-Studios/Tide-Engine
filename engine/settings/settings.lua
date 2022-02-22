@@ -2,8 +2,7 @@ Settings = {}
 --- Config Down Below ---
 title = "Default" --- Your Title
 VSYNC = 0 -- Sets vertical synchronization mode.
-APIKEY = "DevBeta" --- Enter your APIKey
-
+betaBranch = true
 -- Running Config Stuff (DO  NOT TOUCH)
 
 
