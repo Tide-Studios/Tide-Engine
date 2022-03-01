@@ -5,3 +5,4 @@ local settings = loadfile("engine/settings/settings.lua")
 core()
 settings()
 --- Write Code Here ---
+draw.text("hello",0,0)
