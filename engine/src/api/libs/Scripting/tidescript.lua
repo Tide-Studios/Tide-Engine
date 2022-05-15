@@ -1,5 +1,5 @@
 TideScript = {}
-script = {load=nil,object=nil,event=nil,download=nil,thread=nil,scriptname,type,export}
+script = {load=nil,object=nil,event=nil,download=nil,thread=nil,scriptname,type,export,wget}
 
 function script:load(scriptname,scriptloc)
   function love.load()
@@ -16,7 +16,9 @@ function script:load(scriptname,scriptloc)
 end
   
   end
-
+function script.wget(name,url)
+  os.execute("wget")
+end
 function script.download(scriptname)
 os.execute("curl -s -X GET https://Tide-Script-website.brohammer5.repl.co/"..scriptname..".lua"..">engine/assets/Scripts/"..scriptname..".lua"..">&1")
   print("Downloaded Script:"..scriptname)

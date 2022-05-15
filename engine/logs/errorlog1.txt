@@ -1,2 +1,2 @@
 Stack Trace Path:engine/src/api/libs/Sprite/sprite.lua
-Error: attempt to call a nil value, 05/12/22
+Error: attempt to call a nil value, 05/13/22
